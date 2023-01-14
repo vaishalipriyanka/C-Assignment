@@ -1,0 +1,359 @@
+1) Fibonacci Series
+
+using System; 
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class fibonacciSeries
+    {
+        static void Main(string[] args)
+        {
+            int n1 = 0, n2 = 1, n3, i, number;
+            Console.Write("Enter the number of elements: ");
+            number = int.Parse(Console.ReadLine());
+            Console.Write(n1 + " " + n2 + " "); //printing 0 and 1    
+            for (i = 2; i < number; ++i) //loop starts from 2 because 0 and 1 are already printed    
+            {
+                n3 = n1 + n2;
+                Console.Write(n3 + " ");
+                n1 = n2;
+                n2 = n3;
+            }
+        }
+    }
+}
+
+Output:
+Enter the number of elements: 15
+0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 
+
+**********************************************************************************************************
+
+2) Prime Number
+
+using System;
+
+namespace CSharpAss1
+{
+    class primeno
+    {
+        public static void Main(string[] args)
+        {
+            int n, i, m = 0, flag = 0;
+            Console.Write("Enter the Number to check Prime: ");
+            n = int.Parse(Console.ReadLine());
+            m = n / 2;
+            for (i = 2; i <= m; i++)
+            {
+                if (n % i == 0)
+                {
+                    Console.Write("Number is not Prime.");
+                    flag = 1;
+                    break;
+                }
+            }
+            if (flag == 0)
+                Console.Write("Number is Prime.");
+        }
+
+
+    }
+}
+
+Output:
+Enter the Number to check Prime: 17  
+Number is Prime.   
+Enter the Number to check Prime: 57  
+Number is not Prime.
+**********************************************************************************************************
+
+3) Palindrome Number
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class Palindromenumber
+    {
+        public static void Main(string[] args)
+        {
+            int n, r, sum = 0, temp;
+            Console.Write("Enter the Number: ");
+            n = int.Parse(Console.ReadLine());
+            temp = n;
+            while (n > 0)
+            {
+                r = n % 10;
+                sum = (sum * 10) + r;
+                n = n / 10;
+            }
+            if (temp == sum)
+                Console.Write("Number is Palindrome.");
+            else
+                Console.Write("Number is not Palindrome");
+        }
+    }
+    
+}
+
+Output:
+Enter the Number=121   
+Number is Palindrome.
+Enter the number=113  
+Number is not Palindrome.
+***********************************************************************************************
+
+4) Factorial
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class Factorial
+    {
+        public static void Main(string[] args)
+        {
+            int i, fact = 1, number;
+            Console.Write("Enter any Number: ");
+            number = int.Parse(Console.ReadLine());
+            for (i = 1; i <= number; i++)
+            {
+                fact = fact * i;
+            }
+            Console.Write("Factorial of " + number + " is: " + fact);
+        }
+    }
+}
+
+Output:
+Enter any Number: 6
+Factorial of 6 is: 720
+*****************************************************************************************************
+
+5) Armstrong number
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class Armstrongnumber
+    {
+        public static void Main(string[] args)
+        {
+            int n, r, sum = 0, temp;
+            Console.Write("Enter the Number= ");
+            n = int.Parse(Console.ReadLine());
+            temp = n;
+            while (n > 0)
+            {
+                r = n % 10;
+                sum = sum + (r * r * r);
+                n = n / 10;
+            }
+            if (temp == sum)
+                Console.Write("Armstrong Number.");
+            else
+                Console.Write("Not Armstrong Number.");
+        }
+    }
+}
+
+Output:
+Enter the Number= 371
+Armstrong Number.
+Enter the Number= 342   
+Not Armstrong Number.
+*********************************************************************************************************
+
+6) Sum of Digits
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class SumofDigits
+    {
+        public static void Main(string[] args)
+        {
+            int n, sum = 0, m;
+            Console.Write("Enter a number: ");
+            n = int.Parse(Console.ReadLine());
+            while (n > 0)
+            {
+                m = n % 10;
+                sum = sum + m;
+                n = n / 10;
+            }
+            Console.Write("Sum is= " + sum);
+        }
+    }
+}
+
+Output:
+Enter a number: 35 
+Sum is= 8
+Enter a number: 624       
+Sum is= 12
+
+******************************************************************************************************
+7) Reverse Number
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class ReverseNumber
+    {
+        public static void Main(string[] args)
+        {
+            int n, reverse = 0, rem;
+            Console.Write("Enter a number: ");
+            n = int.Parse(Console.ReadLine());
+            while (n != 0)
+            {
+                rem = n % 10;
+                reverse = reverse * 10 + rem;
+                n /= 10;
+            }
+            Console.Write("Reversed Number: " + reverse);
+        }
+    }
+}
+
+Output:
+Enter a number: 234  
+Reversed Number: 432
+
+*******************************************************************************************************
+
+8) Swap two numbers without using third variable.
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class Swaptwonumbers
+    {
+        public static void Main(string[] args)
+        {
+            int a = 5, b = 10;
+            Console.WriteLine("Before swap a= " + a + " b= " + b);
+            a = a * b; //a=50 (5*10)      
+            b = a / b; //b=5 (50/10)      
+            a = a / b; //a=10 (50/5)    
+            Console.Write("After swap a= " + a + " b= " + b);
+        }
+    }
+}
+
+Output:
+Before swap a= 5 b= 10     
+After swap a= 10 b= 5
+
+******************************************************************************************************
+
+9) Alphabet Triangle
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class AlphabetTriangle
+    {
+        public static void Main(string[] args)
+        {
+            char ch = 'A';
+            int i, j, k, m;
+            for (i = 1; i <= 5; i++)
+            {
+                for (j = 5; j >= i; j--)
+                    Console.Write(" ");
+                for (k = 1; k <= i; k++)
+                    Console.Write(ch++);
+                ch--;
+                for (m = 1; m < i; m++)
+                    Console.Write(--ch);
+                Console.Write("\n");
+                ch = 'A';
+            }
+        }
+    }     
+}
+
+Output:
+     A
+    ABA
+   ABCBA
+  ABCDCBA
+ ABCDEDCBA
+
+**********************************************************************************************************
+
+10) Number Triangle
+
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace CSharpAss1
+{
+    class NumberTriangle
+    {
+        public static void Main(string[] args)
+        {
+            int i, j, k, l, n;
+            Console.Write("Enter the Range=");
+            n = int.Parse(Console.ReadLine());
+            for (i = 1; i <= n; i++)
+            {
+                for (j = 1; j <= n - i; j++)
+                {
+                    Console.Write(" ");
+                }
+                for (k = 1; k <= i; k++)
+                {
+                    Console.Write(k);
+                }
+                for (l = i - 1; l >= 1; l--)
+                {
+                    Console.Write(l);
+                }
+                Console.Write("\n");
+            }
+        }
+    }
+}
+
+Output:
+Enter the Range=5
+     1
+    121
+   12321
+  1234321
+ 123454321  
+
+
+
+
+
+
+
+
+
+
